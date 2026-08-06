@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../../../environments/environment';
 import { Router } from '@angular/router';
+import { globalConstants } from '../../core/GlobalConstants/globalConstants';
 
 @Component({
   selector: 'app-login',
@@ -24,6 +25,7 @@ onLogin(){
 this.http.post(environment.API_URL + "login",this.loginObj).subscribe({
   next : (res:any)=>{
     console.log("response",res);
+    localStorage.setItem(globalConstants.Login_Local_key,JSON.stringify(res.data))
     if(res.result){
        this.router.navigateByUrl("/admin/dashboard");
     }else{

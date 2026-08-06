@@ -1,1 +1,56 @@
-<p>layout works!</p>
+<div class="layout-root d-flex">
+	<input id="sidebarToggle" type="checkbox" class="sidebar-toggle-input" hidden />
+	<aside class="layout-sidebar d-flex flex-column">
+		<div class="layout-brand text-center py-4">
+			<div class="brand-icon">HR</div>
+			<div class="brand-title">Employee Mgmt</div>
+		</div>
+
+		<nav class="layout-nav flex-grow-1 px-3 py-2">
+			<a class="nav-link active" href="#">Dashboard</a>
+			<a class="nav-link" href="#">Add Employee</a>
+			<a class="nav-link" href="#">Employees</a>
+			<a class="nav-link" href="#">Attendance</a>
+			<a class="nav-link" href="#">Reports</a>
+		</nav>
+
+		<div class="layout-userbar px-3 py-3">
+			<div class="user-mini d-flex align-items-center">
+				<div class="user-avatar">SJ</div>
+				<div class="user-block ms-2">
+					<div class="user-name">{{loggedInData?.employeeName}}</div>
+					<div class="user-role text-muted">{{loggedInData?.role}}</div>
+				</div>
+			</div>
+			<button class="btn btn-logoff w-100 mt-3" (click)="onLogoff()">Log off</button>
+		</div>
+	</aside>
+
+	<div class="layout-main flex-grow-1 d-flex flex-column">
+		<header class="layout-topbar d-flex align-items-center justify-content-between px-3">
+			<div class="topbar-left d-flex align-items-center">
+				<label for="sidebarToggle" class="btn btn-toggle me-3" aria-label="Toggle sidebar">
+					<span class="hamburger"></span>
+				</label>
+				<h4 class="page-title mb-0">Dashboard</h4>
+			</div>
+
+			<div class="topbar-right d-flex align-items-center">
+				<div class="notifications me-3">
+					<button class="btn btn-icon">🔔</button>
+				</div>
+				<div class="user-summary d-flex align-items-center">
+					<div class="user-avatar">SJ</div>
+					<div class="user-meta ms-2 text-end">
+						<div class="user-name">{{loggedInData?.employeeName}}</div>
+						<div class="user-role text-muted">{{loggedInData?.role}}</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="layout-content p-4">
+			<router-outlet></router-outlet>
+		</main>
+	</div>
+</div>
