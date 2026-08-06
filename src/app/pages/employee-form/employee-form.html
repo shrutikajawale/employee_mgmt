@@ -1,1 +1,88 @@
-<p>employee-form works!</p>
+<section class="employee-form-page">
+  <div class="form-card">
+    <div class="form-header d-flex align-items-start justify-content-between flex-wrap gap-3 mb-4">
+      <div>
+        <h2 class="form-title">Add Employee</h2>
+        <p class="form-subtitle text-muted">Fill in the employee details and select the appropriate department hierarchy.</p>
+      </div>
+      <span class="form-tag">HR & Wellness</span>
+    </div>
+
+    <form class="employee-form">
+      <div class="row gx-3 gy-4">
+        <div class="col-md-6">
+          <label class="form-label">Employee Name</label>
+          <input type="text" class="form-control" [(ngModel)]="employeeObj.employeeName" placeholder="Enter employee name" />
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Contact Number</label>
+          <input type="tel" class="form-control" [(ngModel)]="employeeObj.contactNo" placeholder="Enter contact number" />
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Email ID</label>
+          <input type="email" class="form-control" [(ngModel)]="employeeObj.emailId" placeholder="Enter email address" />
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" [(ngModel)]="employeeObj.password" placeholder="Create a password" />
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Parent Department</label>
+          <select class="form-select">
+            <option selected>Select parent department</option>
+            <option>Human Resources</option>
+            <option>Finance</option>
+            <option>Operations</option>
+            <option>Sales</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Child Department</label>
+          <select class="form-select">
+            <option selected>Select child department</option>
+            <option>Recruitment</option>
+            <option>Payroll</option>
+            <option>Logistics</option>
+            <option>Customer Success</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label">Gender</label>
+          <select class="form-select" [(ngModel)]="employeeObj.gender">
+            <option selected>Select gender</option>
+            <option>Female</option>
+            <option>Male</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label">Role</label>
+          <select class="form-select" [(ngModel)]="employeeObj.role">
+            <option selected>Select role</option>
+            <option>HR Admin</option>
+            <option>Recruiter</option>
+            <option>Payroll Lead</option>
+            <option>Operations Coordinator</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label class="form-label">Department Code</label>
+          <input type="number" class="form-control" [(ngModel)]="employeeObj.deptId" placeholder="Enter dept ID" />
+        </div>
+      </div>
+
+      <div class="form-actions d-flex flex-wrap gap-2 justify-content-end mt-4">
+        <button type="button" class="btn btn-secondary">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save Employee</button>
+      </div>
+    </form>
+  </div>
+</section>

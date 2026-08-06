@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 import { Iuser } from '../../core/interface/User.Modal';
 import { globalConstants } from '../../core/GlobalConstants/globalConstants';
 
 @Component({
   selector: 'app-layout',
-  imports: [RouterModule],
+  imports: [RouterModule,RouterLink],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
 })

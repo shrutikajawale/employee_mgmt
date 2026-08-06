@@ -1,1 +1,69 @@
-<p>employee-list works!</p>
+<section class="employee-list-page">
+  <div class="page-header d-flex align-items-center justify-content-between mb-4">
+    <div>
+      <h2 class="page-title">Employee Directory</h2>
+      <p class="page-subtitle text-muted">View and manage your employee records in one place.</p>
+    </div>
+    <button class="btn btn-primary btn-add-employee" routerLink="/admin/new-employee">Add Employee</button>
+  </div>
+
+  <div class="table-card">
+    <div class="table-status-bar d-flex align-items-center justify-content-between mb-3">
+      <div class="status-text text-muted">Showing 12 employees</div>
+      <div class="table-actions d-flex gap-2">
+        <button class="btn btn-secondary">Import</button>
+        <button class="btn btn-secondary">Export</button>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="employee-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Joining Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Riya Sharma</td>
+            <td>HR</td>
+            <td>Recruiter</td>
+            <td><span class="badge badge-active">Active</span></td>
+            <td>2024-12-12</td>
+            <td>
+              <button class="btn btn-secondary btn-sm">Edit</button>
+              <button class="btn btn-secondary btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Aditya Singh</td>
+            <td>Finance</td>
+            <td>Payroll Lead</td>
+            <td><span class="badge badge-active">Active</span></td>
+            <td>2023-09-05</td>
+            <td>
+              <button class="btn btn-secondary btn-sm">Edit</button>
+              <button class="btn btn-secondary btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Neha Patel</td>
+            <td>Operations</td>
+            <td>Coordinator</td>
+            <td><span class="badge badge-paused">On Leave</span></td>
+            <td>2022-06-20</td>
+            <td>
+              <button class="btn btn-secondary btn-sm">Edit</button>
+              <button class="btn btn-secondary btn-sm btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
