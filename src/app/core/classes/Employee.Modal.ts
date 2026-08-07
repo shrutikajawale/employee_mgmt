@@ -3,7 +3,7 @@ export class EmployeeModal{
   employeeName: string;
   contactNo: string;
   emailId: string;
-  deptId: number;
+  deptId?: number;
   password: string;
   gender: string;
   role: string;
